@@ -1,4 +1,4 @@
-# image-template
+# Silverblue-dx
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project.
 
@@ -64,7 +64,7 @@ Next, you need to add the key to GitHub. This makes use of GitHub's secret signi
 
 Go to your repository settings, under `Secrets and Variables` -> `Actions`
 ![image](https://user-images.githubusercontent.com/1264109/216735595-0ecf1b66-b9ee-439e-87d7-c8cc43c2110a.png)
-Add a new secret and name it `SIGNING_SECRET`, then paste the contents of `cosign.key` into the secret and save it. Make sure it's the .key file and not the .pub file. Once done, it should look like this:
+Add a new secret and name it `COSIGN_PRIVATE_KEY`, then paste the contents of `cosign.key` into the secret and save it. Make sure it's the .key file and not the .pub file. Once done, it should look like this:
 ![image](https://user-images.githubusercontent.com/1264109/216735690-2d19271f-cee2-45ac-a039-23e6a4c16b34.png)
 </details>
 <details>
@@ -73,7 +73,7 @@ Add a new secret and name it `SIGNING_SECRET`, then paste the contents of `cosig
 If you have the `github-cli` installed, run:
 
 ```bash
-gh secret set SIGNING_SECRET < cosign.key
+gh secret set COSIGN_PRIVATE_KEY < cosign.key
 ```
 </details>
 
